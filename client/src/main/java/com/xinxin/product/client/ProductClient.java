@@ -1,7 +1,7 @@
 package com.xinxin.product.client;
 
-import com.xinxin.pruduct.common.CartDTO;
-import com.xinxin.pruduct.common.ProductInfo;
+import com.xinxin.pruduct.common.DecreaseStockInput;
+import com.xinxin.pruduct.common.ProductInfoOutput;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,8 +16,8 @@ public interface ProductClient {
     String getMsg();
 
     @PostMapping("/product/listForOrder")
-    List<ProductInfo> listForOrder(@RequestBody List<String> productIdList);
+    List<ProductInfoOutput> listForOrder(@RequestBody List<String> productIdList);
 
     @PostMapping("/product/decreaseStock")
-    void decreaseStock(@RequestBody List<CartDTO> cartDtoList);
+    void decreaseStock(@RequestBody List<DecreaseStockInput> cartDtoList);
 }

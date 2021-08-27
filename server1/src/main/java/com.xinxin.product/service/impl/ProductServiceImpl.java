@@ -6,7 +6,7 @@ import com.xinxin.product.enums.ResultEnum;
 import com.xinxin.product.exception.ProductException;
 import com.xinxin.product.repository.ProductInfoRepository;
 import com.xinxin.product.service.ProductService;
-import com.xinxin.pruduct.common.CartDTO;
+import com.xinxin.pruduct.common.DecreaseStockInput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,8 +32,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional
-    public void decreaseStock(List<CartDTO> cartDTOList) {
-        for (CartDTO cartDTO : cartDTOList) {
+    public void decreaseStock(List<DecreaseStockInput> cartDTOList) {
+        for (DecreaseStockInput cartDTO : cartDTOList) {
             // 判断商品是否存在
             Optional<ProductInfo> productInfoOptional = productInfoRepository.findById(cartDTO.getProductId());
             if (!productInfoOptional.isPresent()) {

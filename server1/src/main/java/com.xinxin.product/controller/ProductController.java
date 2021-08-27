@@ -8,7 +8,7 @@ import com.xinxin.product.dataobject.ProductInfo;
 import com.xinxin.product.service.CategoryService;
 import com.xinxin.product.service.ProductService;
 import com.xinxin.product.utils.ResultVOUtil;
-import com.xinxin.pruduct.common.CartDTO;
+import com.xinxin.pruduct.common.DecreaseStockInput;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,7 +86,7 @@ public class ProductController {
     }
 
     @PostMapping("/decreaseStock")
-    public void decreaseStock(@RequestBody List<CartDTO> cartDtoList) {
+    public void decreaseStock(@RequestBody List<DecreaseStockInput> cartDtoList) {
         productService.decreaseStock(cartDtoList);
     }
 

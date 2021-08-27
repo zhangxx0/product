@@ -3,10 +3,9 @@ package com.xinxin.pruduct.common;
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 @Data
-public class ProductInfo {
+public class ProductInfoOutput {
 
     private String productId;
 
@@ -30,8 +29,4 @@ public class ProductInfo {
 
     /** 类目编号. */
     private Integer categoryType;
-
-    private Date createTime;
-
-    private Date updateTime;
 }

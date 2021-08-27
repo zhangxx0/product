@@ -1,7 +1,7 @@
 package com.xinxin.product.service;
 
 import com.xinxin.product.dataobject.ProductInfo;
-import com.xinxin.pruduct.common.CartDTO;
+import com.xinxin.pruduct.common.DecreaseStockInput;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ public interface ProductService {
      * 扣库存
      * @param cartDTOList
      */
-    void decreaseStock(List<CartDTO> cartDTOList);
+    void decreaseStock(List<DecreaseStockInput> cartDTOList);
 
 
 }
